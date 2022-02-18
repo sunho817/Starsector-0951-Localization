@@ -10,7 +10,7 @@ from pathlib import Path
 
 from typing import Set, Dict, Tuple, List, Union
 
-# 设置日志输出
+# set log export
 logging.root.setLevel(logging.NOTSET)
 logger = logging.getLogger('ParaTranz.py')
 
@@ -22,7 +22,7 @@ formatter = logging.Formatter("[%(name)s][%(levelname)s] %(message)s")
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
-# 设置游戏原文，译文和Paratranz数据文件路径
+# set path for original game file, translated file and ParaTranz data file
 PROJECT_DIRECTORY = Path(__file__).parent.parent
 ORIGINAL_PATH = PROJECT_DIRECTORY / 'original'
 TRANSLATION_PATH = PROJECT_DIRECTORY / 'localization'
@@ -30,7 +30,7 @@ PARA_TRANZ_PATH = PROJECT_DIRECTORY / 'para_tranz' / 'output'
 CONFIG_PATH = PROJECT_DIRECTORY / 'para_tranz' / 'para_tranz_map.json'
 
 
-# 尝试计算相对于根目录的位置
+# try to get path from root
 def relative_path(path: Path) -> Path:
     try:
         return path.relative_to(PROJECT_DIRECTORY)
